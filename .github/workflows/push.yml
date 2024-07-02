@@ -1,16 +1,19 @@
 name: on-push-workflow
 on: push
 
+env:
+  CI: true
+
 jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run test
-        run: make test
+        run: make ci
 
 
   push-docker-image:
