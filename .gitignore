@@ -9,4 +9,3 @@ app/dist/
 app/tmp/
 app/temp/
 app/.env
-app/*.sqlite
