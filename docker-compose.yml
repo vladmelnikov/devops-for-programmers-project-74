@@ -16,4 +16,4 @@ services:
       dockerfile: Dockerfile.production
     volumes:
       - ./app:/app
-    command: ["npm", "test"]
+    command: ["make", "test"]
