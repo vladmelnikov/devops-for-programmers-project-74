@@ -3,6 +3,10 @@ on: push
 
 env:
   CI: true
+  DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+  DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+  DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+  DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
 
 jobs:
   run-tests:
@@ -14,11 +18,7 @@ jobs:
 
       - name: Run test
         run: make ci
-        env:
-          DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
-          DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
-          DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
-          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+
 
   push-docker-image:
     runs-on: ubuntu-latest
