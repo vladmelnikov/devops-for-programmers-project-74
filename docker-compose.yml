@@ -13,8 +13,6 @@ services:
       context: .
       # Имя Docker-файла из которого будет собран образ
       dockerfile: Dockerfile.production
-    volumes:
-      - ./app:/app
     command: ["make", "test"]
     depends_on:
       db:
