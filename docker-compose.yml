@@ -1,14 +1,10 @@
 version: "3"
-# Определяем список сервисов — services
-# Эти сервисы будут частью нашего приложения
+
 services:
-  app: # Имя сервиса
+  app:
     image: vladislavmel/devops-for-programmers-project-74
     build:
-      # Контекст для сборки образа,
-      # в данном случае, текущая директория
       context: .
-      # Имя Docker-файла из которого будет собран образ
       dockerfile: Dockerfile.production
     command: ["make", "test"]
     depends_on:
