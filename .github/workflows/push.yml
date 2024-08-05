@@ -22,7 +22,7 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
 
       - name: Run test
-        run: make test
+        run: make compose-test
 
   push-docker-image:
     runs-on: ubuntu-latest
