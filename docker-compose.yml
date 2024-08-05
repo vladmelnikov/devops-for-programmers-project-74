@@ -21,6 +21,8 @@ services:
       - POSTGRES_USER=${DATABASE_USERNAME}
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_DB=${DATABASE_NAME}
+    volumes:
+      - db_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
@@ -28,3 +30,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+
+volumes:
+  db_data:
